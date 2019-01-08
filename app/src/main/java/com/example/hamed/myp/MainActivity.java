@@ -38,21 +38,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Adding some demo data(Call Objects).
         // You can get them from your data server
-        callsList.add(new Call("John","9:30 AM"));
-        callsList.add(new Call("Rob","9:40 AM"));
-        callsList.add(new Call("Peter","9:45 AM"));
-        callsList.add(new Call("Jack","9:50 AM"));
-        callsList.add(new Call("Bob","9:55 AM"));
-        callsList.add(new Call("Sandy","10:00 AM"));
-        callsList.add(new Call("Kate","10:05 AM"));
-        callsList.add(new Call("Daniel","10:10 AM"));
-        callsList.add(new Call("Roger","10:15 AM"));
-        callsList.add(new Call("Sid","10:20 AM"));
-        callsList.add(new Call("Kora","10:25 AM"));
-        callsList.add(new Call("Nick","10:30 AM"));
-        callsList.add(new Call("Rose","10:35 AM"));
-        callsList.add(new Call("Mia","10:40 AM"));
-        callsList.add(new Call("Scott","10:45 AM"));
+        callsList.add(new Call("John","9:30 AM",R.drawable.ic_launcher_background));
+        callsList.add(new Call("Rob","9:40 AM",R.drawable.ic_launcher_foreground));
+        callsList.add(new Call("Peter","9:45 AM",R.drawable.ic_launcher_background));
+        callsList.add(new Call("Jack","9:50 AM",R.drawable.ic_launcher_foreground));
+        callsList.add(new Call("Bob","9:55 AM",R.drawable.ic_launcher_background));
+        callsList.add(new Call("Sandy","10:00 AM",R.drawable.ic_launcher_foreground));
+        callsList.add(new Call("Kate","10:05 AM",R.drawable.ic_launcher_background));
+        callsList.add(new Call("Daniel","10:10 AM",R.drawable.ic_launcher_foreground));
+        callsList.add(new Call("Roger","10:15 AM",R.drawable.ic_launcher_background));
+        callsList.add(new Call("Sid","10:20 AM",R.drawable.ic_launcher_foreground));
+        callsList.add(new Call("Kora","10:25 AM",R.drawable.ic_launcher_background));
+        callsList.add(new Call("Nick","10:30 AM",R.drawable.ic_launcher_foreground));
+        callsList.add(new Call("Rose","10:35 AM",R.drawable.ic_launcher_background));
+        callsList.add(new Call("Mia","10:40 AM",R.drawable.ic_launcher_foreground));
+        callsList.add(new Call("Scott","10:45 AM",R.drawable.ic_launcher_background));
 
         // Set items to adapter
         callsAdapter.setCallsFeed(callsList);

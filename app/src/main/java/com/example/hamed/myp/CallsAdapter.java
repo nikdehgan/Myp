@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,12 +52,13 @@ public class CallsAdapter extends RecyclerView.Adapter<CallsAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView callerNameTextView,callTimeTextView;
-
+        private ImageView    myImage;
         public ViewHolder(View itemView) {
             super(itemView);
             // Initiate view
             callerNameTextView=(TextView)itemView.findViewById(R.id.callerName);
             callTimeTextView=(TextView)itemView.findViewById(R.id.callTime);
+            myImage = (ImageView) itemView.findViewById(R.id.myImage);
         }
 
 
@@ -66,6 +68,7 @@ public class CallsAdapter extends RecyclerView.Adapter<CallsAdapter.ViewHolder> 
             String callTime     =call.getCallTime();
             callerNameTextView.setText(callerName);
             callTimeTextView.setText(callTime);
+            myImage.setImageResource(call.getMyImage());
         }
     }
 

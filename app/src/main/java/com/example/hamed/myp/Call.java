@@ -1,10 +1,14 @@
 package com.example.hamed.myp;
+
+import android.graphics.drawable.Drawable;
+
 public class Call {
     private String callerName,callTime;
-
-    public Call(String callerName, String callTime) {
+    private  int myImg;
+    public Call(String callerName, String callTime, int myImg) {
         this.callerName = callerName;
         this.callTime = callTime;
+        this.myImg=myImg;
     }
 
     public String getCallerName() {
@@ -13,6 +17,8 @@ public class Call {
 
     public String getCallTime() {
         return callTime;
+    }public int getMyImage() {
+        return myImg;
     }
 }
 

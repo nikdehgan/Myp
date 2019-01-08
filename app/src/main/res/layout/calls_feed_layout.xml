@@ -5,16 +5,18 @@
     app:cardCornerRadius="5dp"
     android:layout_margin="3dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:textDirection="rtl">
     <LinearLayout
         android:padding="10dp"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:src="@drawable/ic_launcher_background"
-            android:layout_width="20dp"
-            android:layout_height="20dp" />
+            android:id="@+id/myImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
         <RelativeLayout
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
