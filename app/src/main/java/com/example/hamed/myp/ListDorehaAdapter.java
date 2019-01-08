@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CallsAdapter extends RecyclerView.Adapter<CallsAdapter.ViewHolder> {
+public class ListDorehaAdapter extends RecyclerView.Adapter<ListDorehaAdapter.ViewHolder> {
 
     private List<Call> callsFeed=new ArrayList();
     // Context is not used here but may be required to
@@ -19,7 +19,7 @@ public class CallsAdapter extends RecyclerView.Adapter<CallsAdapter.ViewHolder> 
     private Context context;
 
     // Constructor
-    public CallsAdapter(Context context){
+    public ListDorehaAdapter(Context context){
         this.context=context;
     }
 

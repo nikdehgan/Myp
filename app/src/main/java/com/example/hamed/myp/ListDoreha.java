@@ -7,11 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ListDoreha extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private List<Call> callsList;
-    private CallsAdapter callsAdapter;
+    private ListDorehaAdapter callsAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         callsList=new ArrayList<Call>();
 
         // Initiating Adapter
-        callsAdapter=new CallsAdapter(MainActivity.this);
+        callsAdapter=new ListDorehaAdapter(ListDoreha.this);
         recyclerView.setAdapter(callsAdapter);
 
         // Adding some demo data(Call Objects).
