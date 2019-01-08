@@ -6,6 +6,43 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">#fff</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="FormParameter">
+        <item name="android:textColor">#fff</item>
+        <item name="android:ems">10</item>
+        <item name="android:textSize">15sp</item>
+
+        <item name="android:textDirection">rtl</item>
+        <item name="android:textColorHint">#eee</item>
+    </style>
+
+    <style name="textInputLayout">
+        <item name="android:gravity">right</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:textColorHint">#eee</item>
+
+
+    </style>
+
+    <style name="MyTheme" parent="Theme.Design.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style><style name="MyTheme2" parent="Theme.Design.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+</style>
+
+    <style name="button">
+        <item name="colorButtonNormal">@color/btnColor</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+
     </style>
 
 </resources>
