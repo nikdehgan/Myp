@@ -15,7 +15,7 @@ public class ListDoreha extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list_dore);
         recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
 
         // Set Layout Manager
