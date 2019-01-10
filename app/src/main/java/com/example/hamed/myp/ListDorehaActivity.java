@@ -43,6 +43,7 @@ public class ListDorehaActivity extends AppCompatActivity {
         // Limiting the size
         recyclerView.setHasFixedSize(true);
 
+
         // Initialize list items
         init();
 

@@ -45,6 +45,7 @@ public class ListDorehaAdapter extends RecyclerView.Adapter<ListDorehaAdapter.Vi
         View v = LayoutInflater
                 .from(parent.getContext())
                 .inflate(layout, parent, false);
+        
         return new ViewHolder(v);
     }
 
