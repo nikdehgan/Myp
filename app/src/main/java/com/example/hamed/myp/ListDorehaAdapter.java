@@ -1,6 +1,7 @@
 package com.example.hamed.myp;
 
 import android.content.Context;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,6 @@ import java.util.List;
 
 
 public class ListDorehaAdapter extends RecyclerView.Adapter<ListDorehaAdapter.ViewHolder> {
-
     private List<Call> callsFeed=new ArrayList();
     // Context is not used here but may be required to
     // perform complex operations or call methods from outside

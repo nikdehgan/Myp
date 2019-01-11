@@ -30,8 +30,8 @@
     </style>
 
     <style name="MyTheme" parent="Theme.Design.Light.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:windowFullscreen">true</item>-->
     </style><style name="MyTheme2" parent="Theme.Design.Light">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
