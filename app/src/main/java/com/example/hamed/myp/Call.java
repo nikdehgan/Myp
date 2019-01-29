@@ -1,7 +1,5 @@
 package com.example.hamed.myp;
 
-import android.graphics.drawable.Drawable;
-
 public class Call {
     private String callerName,callTime;
     private  int myImg;

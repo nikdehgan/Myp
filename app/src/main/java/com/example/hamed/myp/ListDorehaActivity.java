@@ -1,9 +1,10 @@
 package com.example.hamed.myp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -24,11 +25,10 @@ import io.github.inflationx.viewpump.ViewPump;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public class ListDorehaActivity extends AppCompatActivity {
+
     DrawerLayout myDrawerLayout;
-    private RecyclerView recyclerView;
-    private LinearLayoutManager linearLayoutManager;
-    private List<Call> callsList;
-    private ListDorehaAdapter callsAdapter;
+
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,24 +44,39 @@ public class ListDorehaActivity extends AppCompatActivity {
                 .build());
         //////////////
         setContentView(R.layout.list_dore_activity);
+        loadFragment(new DoreFragment());
+        ///////////////
+        bottomNavigationView=findViewById(R.id.bottomNavigationView)     ;
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                Fragment fragment = null;
+
+                switch (menuItem.getItemId()) {
+                    case R.id.mydore:
+                        Toast.makeText(ListDorehaActivity.this, "mydore", Toast.LENGTH_SHORT).show();
+                        fragment = new DoreFragment();
+                        break;
+
+                    case R.id.myhome:
+                        fragment = new HomeFragment();
+                        break;
+
+                    case R.id.doreha:
+                        fragment = new DorehaFragment();
+                        break;
+
+                }
+                return loadFragment(fragment);
+            }
+        });
+        //////////////////
     Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
       actionbar.setDisplayHomeAsUpEnabled(true);
       actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-
-        // Set Layout Manager
-        linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        // Limiting the size
-        recyclerView.setHasFixedSize(true);
-
-
-        // Initialize list items
-        init();
        ///////////////drawer
         myDrawerLayout = findViewById(R.id.drawer_layout);
 
@@ -71,10 +86,9 @@ public class ListDorehaActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
-                Toast.makeText(ListDorehaActivity.this, "ddddd", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListDorehaActivity.this, menuItem.getTitle(), Toast.LENGTH_SHORT).show();
                 // close drawer when item is tapped
                 myDrawerLayout.closeDrawers();
-startActivity(new Intent(ListDorehaActivity.this,Two.class));
                 // Add code here to update the UI based on the item selected
                 // For example, swap UI fragments here
 
@@ -83,34 +97,20 @@ startActivity(new Intent(ListDorehaActivity.this,Two.class));
         });
     }
 
-    private void init() {
-        callsList = new ArrayList<Call>();
+    private Boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            Toast.makeText(this, "true", Toast.LENGTH_SHORT).show();
 
-        // Initiating Adapter
-        callsAdapter = new ListDorehaAdapter(ListDorehaActivity.this);
-        recyclerView.setAdapter(callsAdapter);
+            return true;
+        }
+        Toast.makeText(this, "false", Toast.LENGTH_SHORT).show();
 
-        // Adding some demo data(Call Objects).
-        // You can get them from your data server
-        callsList.add(new Call("حامد", "9:30 AM", R.drawable.mypic));
-        callsList.add(new Call("علی", "9:40 AM", R.drawable.a2));
-        callsList.add(new Call("Peter", "9:45 AM", R.drawable.a3));
-        callsList.add(new Call("Jack", "9:50 AM", R.drawable.a1));
-        callsList.add(new Call("Bob", "9:55 AM", R.drawable.a4));
-        callsList.add(new Call("Sandy", "10:00 AM", R.drawable.a5));
-        callsList.add(new Call("Kate", "10:05 AM", R.drawable.mypic));
-        callsList.add(new Call("Daniel", "10:10 AM", R.drawable.a1));
-        callsList.add(new Call("Roger", "10:15 AM", R.drawable.a2));
-        callsList.add(new Call("Sid", "10:20 AM", R.drawable.a3));
-        callsList.add(new Call("Kora", "10:25 AM", R.drawable.a4));
-        callsList.add(new Call("Nick", "10:30 AM", R.drawable.a5));
-        callsList.add(new Call("Rose", "10:35 AM", R.drawable.mypic));
-        callsList.add(new Call("Mia", "10:40 AM", R.drawable.a1));
-        callsList.add(new Call("Scott", "10:45 AM", R.drawable.a2));
-
-        // Set items to adapter
-        callsAdapter.setCallsFeed(callsList);
-        callsAdapter.notifyDataSetChanged();
+        return false;
     }
 
 
@@ -120,6 +120,7 @@ startActivity(new Intent(ListDorehaActivity.this,Two.class));
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(this, "ddddd", Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
             case android.R.id.home:
                 myDrawerLayout.openDrawer(GravityCompat.START);
